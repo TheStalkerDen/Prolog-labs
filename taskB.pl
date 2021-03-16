@@ -1,3 +1,11 @@
-gcd(A,0,A):-!.
-gcd(A,B,Res):- B=\=0,A2 is A mod B, gcd(B,A2,Res2),Res is Res2.
-coprime(A,B):-gcd(A,B,Res),abs(Res) =:= 1.
+gcd(X,X,X).
+gcd(X,Y,D):- 
+	X < Y,
+	Y1 is Y - X,
+	gcd(X, Y1, D).
+gcd(X,Y,D):- 
+	Y < X,
+	X1 is X - Y,
+	gcd(X1, Y, D).
+
+coprime(A,B):-gcd(A,B,Res), Res =:= 1.
