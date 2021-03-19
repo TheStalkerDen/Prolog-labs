@@ -1,7 +1,7 @@
-fib(0,0) :- !.
-fib(1,1) :- !.
+fib(0,0):-!.
+fib(1,1):-!.
 fib(X,Res):-
-    X > 2,
+    X >= 2,
     X1 is X-1,
     X2 is X-2,
     fib(X1,Res1),
